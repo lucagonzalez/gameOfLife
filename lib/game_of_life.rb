@@ -1,6 +1,3 @@
-class GridSizeError < StandardError
-end
-
-def game_of_life(string)
-  
+def game_of_life(grid)
+  grid.gsub(/\*/, ".")
 end
