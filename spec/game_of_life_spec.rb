@@ -15,37 +15,49 @@ describe 'Game of Life' do
   it "is given no living cells" do
     no_cell_grid = "4 8\n........\n........\n........\n........"
 
-    expect(game_of_life(no_cell_grid)).to eq no_cell_grid
+    next_generation = game_of_life(no_cell_grid)
+
+    expect(next_generation).to eq no_cell_grid
   end
   it "is given one living cell in any position" do
     one_cell_grid = "4 8\n........\n....*...\n........\n........"
     no_cell_grid = "4 8\n........\n........\n........\n........"
 
-    expect(game_of_life(one_cell_grid)).to eq no_cell_grid
+    next_generation = game_of_life(one_cell_grid)
+
+    expect(next_generation).to eq no_cell_grid
   end
   it "is given one living cell in the edge" do
     one_cell_grid = "4 8\n*.......\n........\n........\n........"
     no_cell_grid = "4 8\n........\n........\n........\n........"
 
-    expect(game_of_life(one_cell_grid)).to eq no_cell_grid
+    next_generation = game_of_life(one_cell_grid)
+
+    expect(next_generation).to eq no_cell_grid
   end
   it "is given two neighbours live cells in the same roll" do
     two_neighbours_cell_grid = "4 8\n........\n..***...\n........\n........"
     two_cell_grid = "4 8\n........\n...*....\n...*....\n........"
 
-    expect(game_of_life(two_neighbours_cell_grid)).to eq two_cell_grid
+    next_generation = game_of_life(two_neighbours_cell_grid)
+
+    expect(next_generation).to eq two_cell_grid
   end
   it "is given three neighbours live cells in the same column" do
     two_neighbours_cell_grid = "4 8\n...*....\n...*....\n...*....\n........"
     three_cell_grid = "4 8\n........\n..***...\n........\n........"
 
-    expect(game_of_life(two_neighbours_cell_grid)).to eq three_cell_grid
+    next_generation = game_of_life(two_neighbours_cell_grid)
+
+    expect(next_generation).to eq three_cell_grid
   end
   it "is given two groups of three neighbours live cells in the same roll, on the edge" do
     two_neighbours_cell_grid = "4 8\n..***...\n........\n........\n.***...."
     two_cell_grid = "4 8\n........\n...*....\n..*.....\n........"
 
-    expect(game_of_life(two_neighbours_cell_grid)).to eq two_cell_grid
+    next_generation = game_of_life(two_neighbours_cell_grid)
+
+    expect(next_generation).to eq two_cell_grid
   end
   it "is given two groups of three neighbours live cells in the same column, on the edge" do
     two_neighbours_cell_grid = "4 8\n*......*\n*......*\n*......*\n........"
